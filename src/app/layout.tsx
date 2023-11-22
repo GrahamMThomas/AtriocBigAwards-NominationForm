@@ -19,7 +19,7 @@ export default async function RootLayout({
   const session = await getServerSession();
 
   return (
-    <html lang="en">
+    <html lang="en" className="w-screen h-screen bg-cover bg-mobile">
       <body className={inter.className}>
         <SessionProvider>{children}</SessionProvider>
       </body>

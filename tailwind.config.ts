@@ -12,6 +12,9 @@ const config: Config = {
         'mobile': 'url("/static/images/mobile-background.png")',
         'desktop': 'url("/static/images/desktop-background.png")',
       },
+      colors: {
+        'navy': '#0E212E',
+      }
     },
   },
   plugins: [],

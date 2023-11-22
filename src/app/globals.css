@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Rubik One';
+    src: url('/static/fonts/RubikOne-Regular.ttf');
+}
+
+body {
+  font-family: 'Rubik One';
+}
+
+body, button, h1 {
+    font-family: 'Rubik One';
+}
