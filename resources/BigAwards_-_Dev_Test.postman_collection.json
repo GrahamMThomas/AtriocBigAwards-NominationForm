@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "5d58a9ae-1b85-47d4-a1e7-a71fd8d24ea8",
+		"name": "BigAwards - Dev Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23758765"
+	},
+	"item": [
+		{
+			"name": "Get Category Groups",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/category-groups?populate=*",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"category-groups"
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "*"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Category Groups Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/category-groups?populate=*",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"category-groups"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7863"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Nov 2023 22:30:45 GMT"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Dns-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"title\": \"General Categories\",\n                \"createdAt\": \"2023-11-18T09:46:23.879Z\",\n                \"updatedAt\": \"2023-11-18T09:53:47.854Z\",\n                \"publishedAt\": \"2023-11-18T09:46:25.408Z\",\n                \"color\": \"E84F8E\",\n                \"categories\": {\n                    \"data\": [\n                        {\n                            \"id\": 1,\n                            \"attributes\": {\n                                \"title\": \"Dumbest GSS Moment\",\n                                \"description\": \"Dumbest get smarter Saturdays moment\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:49:10.794Z\",\n                                \"updatedAt\": \"2023-11-18T12:04:59.588Z\",\n                                \"publishedAt\": \"2023-11-18T09:49:50.619Z\"\n                            }\n                        },\n                        {\n                            \"id\": 2,\n                            \"attributes\": {\n                                \"title\": \"Biggest Boomer Moment\",\n                                \"description\": \"Moments from streams past that made you go :BOOMER:\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:49:43.371Z\",\n                                \"updatedAt\": \"2023-11-18T09:49:47.598Z\",\n                                \"publishedAt\": \"2023-11-18T09:49:47.595Z\"\n                            }\n                        },\n                        {\n                            \"id\": 3,\n                            \"attributes\": {\n                                \"title\": \"Best Stream Guest\",\n                                \"description\": \"The guest stars Atrioc has brought onto the stream who won the hearts and minds of chat.  (ie. punch, aspecticor, etc.) \",\n                                \"type\": \"text\",\n                                \"createdAt\": \"2023-11-18T09:50:12.968Z\",\n                                \"updatedAt\": \"2023-11-18T09:50:13.794Z\",\n                                \"publishedAt\": \"2023-11-18T09:50:13.786Z\"\n                            }\n                        },\n                        {\n                            \"id\": 4,\n                            \"attributes\": {\n                                \"title\": \"The Joeler Award\",\n                                \"description\": \"best ari moment <3\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:50:35.381Z\",\n                                \"updatedAt\": \"2023-11-18T19:57:36.092Z\",\n                                \"publishedAt\": \"2023-11-18T09:50:36.840Z\"\n                            }\n                        },\n                        {\n                            \"id\": 5,\n                            \"attributes\": {\n                                \"title\": \"The Mayfly Meme\",\n                                \"description\": \"Memes that are born and die in a matter of days\",\n                                \"type\": \"text\",\n                                \"createdAt\": \"2023-11-18T09:51:23.612Z\",\n                                \"updatedAt\": \"2023-11-18T09:51:38.106Z\",\n                                \"publishedAt\": \"2023-11-18T09:51:38.103Z\"\n                            }\n                        },\n                        {\n                            \"id\": 6,\n                            \"attributes\": {\n                                \"title\": \"Best Era\",\n                                \"description\": null,\n                                \"type\": \"text\",\n                                \"createdAt\": \"2023-11-18T09:52:01.173Z\",\n                                \"updatedAt\": \"2023-11-18T09:52:02.137Z\",\n                                \"publishedAt\": \"2023-11-18T09:52:02.135Z\"\n                            }\n                        },\n                        {\n                            \"id\": 7,\n                            \"attributes\": {\n                                \"title\": \"Best one-off Stream\",\n                                \"description\": null,\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:52:37.594Z\",\n                                \"updatedAt\": \"2023-11-18T10:02:13.518Z\",\n                                \"publishedAt\": \"2023-11-18T09:52:38.775Z\"\n                            }\n                        },\n                        {\n                            \"id\": 8,\n                            \"attributes\": {\n                                \"title\": \"Clip of the Year\",\n                                \"description\": null,\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:52:49.866Z\",\n                                \"updatedAt\": \"2023-11-18T09:52:50.767Z\",\n                                \"publishedAt\": \"2023-11-18T09:52:50.764Z\"\n                            }\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"attributes\": {\n                \"title\": \"Moosic Categories\",\n                \"createdAt\": \"2023-11-18T09:46:42.903Z\",\n                \"updatedAt\": \"2023-11-18T09:57:07.541Z\",\n                \"publishedAt\": \"2023-11-18T09:46:44.356Z\",\n                \"color\": \"52ACFE\",\n                \"categories\": {\n                    \"data\": [\n                        {\n                            \"id\": 9,\n                            \"attributes\": {\n                                \"title\": \"This is on Your Playlist\",\n                                \"description\": \"Song from stream you listen to unironically and have put on your actual playlists \",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:54:18.572Z\",\n                                \"updatedAt\": \"2023-11-18T09:54:19.479Z\",\n                                \"publishedAt\": \"2023-11-18T09:54:19.477Z\"\n                            }\n                        },\n                        {\n                            \"id\": 10,\n                            \"attributes\": {\n                                \"title\": \"Most Motivational Song\",\n                                \"description\": \"Songs that inspired moments of divine inspiration and influenced the outcome of the stream\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:54:42.237Z\",\n                                \"updatedAt\": \"2023-11-18T09:54:43.177Z\",\n                                \"publishedAt\": \"2023-11-18T09:54:43.175Z\"\n                            }\n                        },\n                        {\n                            \"id\": 11,\n                            \"attributes\": {\n                                \"title\": \"Best Song Era\",\n                                \"description\": null,\n                                \"type\": \"text\",\n                                \"createdAt\": \"2023-11-18T09:55:07.694Z\",\n                                \"updatedAt\": \"2023-11-18T09:55:08.828Z\",\n                                \"publishedAt\": \"2023-11-18T09:55:08.826Z\"\n                            }\n                        },\n                        {\n                            \"id\": 12,\n                            \"attributes\": {\n                                \"title\": \"Best Parody Song\",\n                                \"description\": \"Best stream song that's a parody/cover of a pre-existing song\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:55:29.259Z\",\n                                \"updatedAt\": \"2023-11-18T09:55:30.131Z\",\n                                \"publishedAt\": \"2023-11-18T09:55:30.129Z\"\n                            }\n                        },\n                        {\n                            \"id\": 13,\n                            \"attributes\": {\n                                \"title\": \"Best Original Song\",\n                                \"description\": \"Best stream song with original music and lyrics that's not a parody\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:55:50.649Z\",\n                                \"updatedAt\": \"2023-11-18T09:55:51.356Z\",\n                                \"publishedAt\": \"2023-11-18T09:55:51.354Z\"\n                            }\n                        },\n                        {\n                            \"id\": 14,\n                            \"attributes\": {\n                                \"title\": \"Musician of the Year\",\n                                \"description\": \"Your favorite musician who has released a stream song in the modern era\",\n                                \"type\": \"text\",\n                                \"createdAt\": \"2023-11-18T09:56:18.847Z\",\n                                \"updatedAt\": \"2023-11-18T09:56:20.583Z\",\n                                \"publishedAt\": \"2023-11-18T09:56:20.581Z\"\n                            }\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            \"id\": 3,\n            \"attributes\": {\n                \"title\": \"Gaming Categories\",\n                \"createdAt\": \"2023-11-18T09:47:05.191Z\",\n                \"updatedAt\": \"2023-11-18T10:00:01.018Z\",\n                \"publishedAt\": \"2023-11-18T09:47:06.007Z\",\n                \"color\": \"A52E1D\",\n                \"categories\": {\n                    \"data\": [\n                        {\n                            \"id\": 15,\n                            \"attributes\": {\n                                \"title\": \"Worst Puzzle Performance\",\n                                \"description\": \"Moments of Atrioc playing puzzle games that made you question his (and your) sanity.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:57:44.013Z\",\n                                \"updatedAt\": \"2023-11-18T09:57:45.968Z\",\n                                \"publishedAt\": \"2023-11-18T09:57:45.966Z\"\n                            }\n                        },\n                        {\n                            \"id\": 16,\n                            \"attributes\": {\n                                \"title\": \"Worst Throw\",\n                                \"description\": \"Atrioc is bad at games sometimes (most of the time).  These clips should be a collection of some of his least skilled moments.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:58:06.174Z\",\n                                \"updatedAt\": \"2023-11-18T09:58:07.018Z\",\n                                \"publishedAt\": \"2023-11-18T09:58:07.015Z\"\n                            }\n                        },\n                        {\n                            \"id\": 18,\n                            \"attributes\": {\n                                \"title\": \"Best Pop Off\",\n                                \"description\": \"The best celebration as a result of a game.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:58:58.244Z\",\n                                \"updatedAt\": \"2023-11-18T09:58:59.336Z\",\n                                \"publishedAt\": \"2023-11-18T09:58:59.334Z\"\n                            }\n                        },\n                        {\n                            \"id\": 19,\n                            \"attributes\": {\n                                \"title\": \"Best Gaming Moment\",\n                                \"description\": null,\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T09:59:30.733Z\",\n                                \"updatedAt\": \"2023-11-18T09:59:31.566Z\",\n                                \"publishedAt\": \"2023-11-18T09:59:31.563Z\"\n                            }\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"attributes\": {\n                \"title\": \"Oldhead Categories\",\n                \"createdAt\": \"2023-11-18T09:47:22.936Z\",\n                \"updatedAt\": \"2023-11-18T10:03:25.499Z\",\n                \"publishedAt\": \"2023-11-18T09:47:24.912Z\",\n                \"color\": \"AA6B20\",\n                \"categories\": {\n                    \"data\": [\n                        {\n                            \"id\": 20,\n                            \"attributes\": {\n                                \"title\": \"Best Vintage Song\",\n                                \"description\": \"The best piece of music whos impact has lasted well beyond its normal lifetime (Pre-Jan 2022).\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T10:00:32.416Z\",\n                                \"updatedAt\": \"2023-11-18T10:00:34.579Z\",\n                                \"publishedAt\": \"2023-11-18T10:00:34.576Z\"\n                            }\n                        },\n                        {\n                            \"id\": 21,\n                            \"attributes\": {\n                                \"title\": \"Best Vintage Moment\",\n                                \"description\": \"The story your grandparents still tell you about to this day. The best moment\\\\ of Atrioc previous to Jan 2022.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T10:00:51.856Z\",\n                                \"updatedAt\": \"2023-11-18T10:00:56.828Z\",\n                                \"publishedAt\": \"2023-11-18T10:00:56.826Z\"\n                            }\n                        },\n                        {\n                            \"id\": 23,\n                            \"attributes\": {\n                                \"title\": \"I Miss the old Atrioc Award\",\n                                \"description\": \"The best era of the Atrioc stream before Jan 2022.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T10:02:01.277Z\",\n                                \"updatedAt\": \"2023-11-18T10:02:02.077Z\",\n                                \"publishedAt\": \"2023-11-18T10:02:02.075Z\"\n                            }\n                        },\n                        {\n                            \"id\": 24,\n                            \"attributes\": {\n                                \"title\": \"Lifetime Achievement Award\",\n                                \"description\": \"Chatter whose impact will be felt for generations.\",\n                                \"type\": \"text\",\n                                \"createdAt\": \"2023-11-18T10:02:49.488Z\",\n                                \"updatedAt\": \"2023-11-18T10:02:50.259Z\",\n                                \"publishedAt\": \"2023-11-18T10:02:50.258Z\"\n                            }\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            \"id\": 5,\n            \"attributes\": {\n                \"title\": \"Chatter Categories\",\n                \"createdAt\": \"2023-11-18T09:47:43.507Z\",\n                \"updatedAt\": \"2023-11-18T10:06:02.232Z\",\n                \"publishedAt\": \"2023-11-18T09:47:44.295Z\",\n                \"color\": \"47A170\",\n                \"categories\": {\n                    \"data\": [\n                        {\n                            \"id\": 25,\n                            \"attributes\": {\n                                \"title\": \"Best HIgh Effort Moment\",\n                                \"description\": \"Moments where Chatters have gone above and beyond in exceeding expectations for the bit.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T10:04:10.800Z\",\n                                \"updatedAt\": \"2023-11-18T10:04:11.689Z\",\n                                \"publishedAt\": \"2023-11-18T10:04:11.687Z\"\n                            }\n                        },\n                        {\n                            \"id\": 26,\n                            \"attributes\": {\n                                \"title\": \"Best Ban\",\n                                \"description\": \"Get Banned.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T10:04:24.128Z\",\n                                \"updatedAt\": \"2023-11-18T10:04:24.880Z\",\n                                \"publishedAt\": \"2023-11-18T10:04:24.876Z\"\n                            }\n                        },\n                        {\n                            \"id\": 27,\n                            \"attributes\": {\n                                \"title\": \"Rotten Brain Award\",\n                                \"description\": \"Moments of extreme brainrot from chatters.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T10:04:47.006Z\",\n                                \"updatedAt\": \"2023-11-18T10:04:47.840Z\",\n                                \"publishedAt\": \"2023-11-18T10:04:47.838Z\"\n                            }\n                        },\n                        {\n                            \"id\": 28,\n                            \"attributes\": {\n                                \"title\": \"Most Enlighted Chatter\",\n                                \"description\": \"Chatters who have gone out of their way to help other community members.\",\n                                \"type\": \"link\",\n                                \"createdAt\": \"2023-11-18T10:05:08.831Z\",\n                                \"updatedAt\": \"2023-11-18T10:05:09.727Z\",\n                                \"publishedAt\": \"2023-11-18T10:05:09.725Z\"\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 5\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/categories",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Categories Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Content-Length",
+							"value": "6521"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Nov 2023 22:30:49 GMT"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Dns-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"title\": \"Dumbest GSS Moment\",\n                \"description\": \"Dumbest get smarter Saturdays moment\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:49:10.794Z\",\n                \"updatedAt\": \"2023-11-18T12:04:59.588Z\",\n                \"publishedAt\": \"2023-11-18T09:49:50.619Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"attributes\": {\n                \"title\": \"Biggest Boomer Moment\",\n                \"description\": \"Moments from streams past that made you go :BOOMER:\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:49:43.371Z\",\n                \"updatedAt\": \"2023-11-18T09:49:47.598Z\",\n                \"publishedAt\": \"2023-11-18T09:49:47.595Z\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"attributes\": {\n                \"title\": \"Best Stream Guest\",\n                \"description\": \"The guest stars Atrioc has brought onto the stream who won the hearts and minds of chat.  (ie. punch, aspecticor, etc.) \",\n                \"type\": \"text\",\n                \"createdAt\": \"2023-11-18T09:50:12.968Z\",\n                \"updatedAt\": \"2023-11-18T09:50:13.794Z\",\n                \"publishedAt\": \"2023-11-18T09:50:13.786Z\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"attributes\": {\n                \"title\": \"The Joeler Award\",\n                \"description\": \"best ari moment <3\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:50:35.381Z\",\n                \"updatedAt\": \"2023-11-18T19:57:36.092Z\",\n                \"publishedAt\": \"2023-11-18T09:50:36.840Z\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"attributes\": {\n                \"title\": \"The Mayfly Meme\",\n                \"description\": \"Memes that are born and die in a matter of days\",\n                \"type\": \"text\",\n                \"createdAt\": \"2023-11-18T09:51:23.612Z\",\n                \"updatedAt\": \"2023-11-18T09:51:38.106Z\",\n                \"publishedAt\": \"2023-11-18T09:51:38.103Z\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"attributes\": {\n                \"title\": \"Best Era\",\n                \"description\": null,\n                \"type\": \"text\",\n                \"createdAt\": \"2023-11-18T09:52:01.173Z\",\n                \"updatedAt\": \"2023-11-18T09:52:02.137Z\",\n                \"publishedAt\": \"2023-11-18T09:52:02.135Z\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"attributes\": {\n                \"title\": \"Best one-off Stream\",\n                \"description\": null,\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:52:37.594Z\",\n                \"updatedAt\": \"2023-11-18T10:02:13.518Z\",\n                \"publishedAt\": \"2023-11-18T09:52:38.775Z\"\n            }\n        },\n        {\n            \"id\": 8,\n            \"attributes\": {\n                \"title\": \"Clip of the Year\",\n                \"description\": null,\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:52:49.866Z\",\n                \"updatedAt\": \"2023-11-18T09:52:50.767Z\",\n                \"publishedAt\": \"2023-11-18T09:52:50.764Z\"\n            }\n        },\n        {\n            \"id\": 9,\n            \"attributes\": {\n                \"title\": \"This is on Your Playlist\",\n                \"description\": \"Song from stream you listen to unironically and have put on your actual playlists \",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:54:18.572Z\",\n                \"updatedAt\": \"2023-11-18T09:54:19.479Z\",\n                \"publishedAt\": \"2023-11-18T09:54:19.477Z\"\n            }\n        },\n        {\n            \"id\": 10,\n            \"attributes\": {\n                \"title\": \"Most Motivational Song\",\n                \"description\": \"Songs that inspired moments of divine inspiration and influenced the outcome of the stream\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:54:42.237Z\",\n                \"updatedAt\": \"2023-11-18T09:54:43.177Z\",\n                \"publishedAt\": \"2023-11-18T09:54:43.175Z\"\n            }\n        },\n        {\n            \"id\": 11,\n            \"attributes\": {\n                \"title\": \"Best Song Era\",\n                \"description\": null,\n                \"type\": \"text\",\n                \"createdAt\": \"2023-11-18T09:55:07.694Z\",\n                \"updatedAt\": \"2023-11-18T09:55:08.828Z\",\n                \"publishedAt\": \"2023-11-18T09:55:08.826Z\"\n            }\n        },\n        {\n            \"id\": 12,\n            \"attributes\": {\n                \"title\": \"Best Parody Song\",\n                \"description\": \"Best stream song that's a parody/cover of a pre-existing song\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:55:29.259Z\",\n                \"updatedAt\": \"2023-11-18T09:55:30.131Z\",\n                \"publishedAt\": \"2023-11-18T09:55:30.129Z\"\n            }\n        },\n        {\n            \"id\": 13,\n            \"attributes\": {\n                \"title\": \"Best Original Song\",\n                \"description\": \"Best stream song with original music and lyrics that's not a parody\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:55:50.649Z\",\n                \"updatedAt\": \"2023-11-18T09:55:51.356Z\",\n                \"publishedAt\": \"2023-11-18T09:55:51.354Z\"\n            }\n        },\n        {\n            \"id\": 14,\n            \"attributes\": {\n                \"title\": \"Musician of the Year\",\n                \"description\": \"Your favorite musician who has released a stream song in the modern era\",\n                \"type\": \"text\",\n                \"createdAt\": \"2023-11-18T09:56:18.847Z\",\n                \"updatedAt\": \"2023-11-18T09:56:20.583Z\",\n                \"publishedAt\": \"2023-11-18T09:56:20.581Z\"\n            }\n        },\n        {\n            \"id\": 15,\n            \"attributes\": {\n                \"title\": \"Worst Puzzle Performance\",\n                \"description\": \"Moments of Atrioc playing puzzle games that made you question his (and your) sanity.\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:57:44.013Z\",\n                \"updatedAt\": \"2023-11-18T09:57:45.968Z\",\n                \"publishedAt\": \"2023-11-18T09:57:45.966Z\"\n            }\n        },\n        {\n            \"id\": 16,\n            \"attributes\": {\n                \"title\": \"Worst Throw\",\n                \"description\": \"Atrioc is bad at games sometimes (most of the time).  These clips should be a collection of some of his least skilled moments.\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:58:06.174Z\",\n                \"updatedAt\": \"2023-11-18T09:58:07.018Z\",\n                \"publishedAt\": \"2023-11-18T09:58:07.015Z\"\n            }\n        },\n        {\n            \"id\": 18,\n            \"attributes\": {\n                \"title\": \"Best Pop Off\",\n                \"description\": \"The best celebration as a result of a game.\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:58:58.244Z\",\n                \"updatedAt\": \"2023-11-18T09:58:59.336Z\",\n                \"publishedAt\": \"2023-11-18T09:58:59.334Z\"\n            }\n        },\n        {\n            \"id\": 19,\n            \"attributes\": {\n                \"title\": \"Best Gaming Moment\",\n                \"description\": null,\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T09:59:30.733Z\",\n                \"updatedAt\": \"2023-11-18T09:59:31.566Z\",\n                \"publishedAt\": \"2023-11-18T09:59:31.563Z\"\n            }\n        },\n        {\n            \"id\": 20,\n            \"attributes\": {\n                \"title\": \"Best Vintage Song\",\n                \"description\": \"The best piece of music whos impact has lasted well beyond its normal lifetime (Pre-Jan 2022).\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T10:00:32.416Z\",\n                \"updatedAt\": \"2023-11-18T10:00:34.579Z\",\n                \"publishedAt\": \"2023-11-18T10:00:34.576Z\"\n            }\n        },\n        {\n            \"id\": 21,\n            \"attributes\": {\n                \"title\": \"Best Vintage Moment\",\n                \"description\": \"The story your grandparents still tell you about to this day. The best moment\\\\ of Atrioc previous to Jan 2022.\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T10:00:51.856Z\",\n                \"updatedAt\": \"2023-11-18T10:00:56.828Z\",\n                \"publishedAt\": \"2023-11-18T10:00:56.826Z\"\n            }\n        },\n        {\n            \"id\": 23,\n            \"attributes\": {\n                \"title\": \"I Miss the old Atrioc Award\",\n                \"description\": \"The best era of the Atrioc stream before Jan 2022.\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T10:02:01.277Z\",\n                \"updatedAt\": \"2023-11-18T10:02:02.077Z\",\n                \"publishedAt\": \"2023-11-18T10:02:02.075Z\"\n            }\n        },\n        {\n            \"id\": 24,\n            \"attributes\": {\n                \"title\": \"Lifetime Achievement Award\",\n                \"description\": \"Chatter whose impact will be felt for generations.\",\n                \"type\": \"text\",\n                \"createdAt\": \"2023-11-18T10:02:49.488Z\",\n                \"updatedAt\": \"2023-11-18T10:02:50.259Z\",\n                \"publishedAt\": \"2023-11-18T10:02:50.258Z\"\n            }\n        },\n        {\n            \"id\": 25,\n            \"attributes\": {\n                \"title\": \"Best HIgh Effort Moment\",\n                \"description\": \"Moments where Chatters have gone above and beyond in exceeding expectations for the bit.\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T10:04:10.800Z\",\n                \"updatedAt\": \"2023-11-18T10:04:11.689Z\",\n                \"publishedAt\": \"2023-11-18T10:04:11.687Z\"\n            }\n        },\n        {\n            \"id\": 26,\n            \"attributes\": {\n                \"title\": \"Best Ban\",\n                \"description\": \"Get Banned.\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T10:04:24.128Z\",\n                \"updatedAt\": \"2023-11-18T10:04:24.880Z\",\n                \"publishedAt\": \"2023-11-18T10:04:24.876Z\"\n            }\n        },\n        {\n            \"id\": 27,\n            \"attributes\": {\n                \"title\": \"Rotten Brain Award\",\n                \"description\": \"Moments of extreme brainrot from chatters.\",\n                \"type\": \"link\",\n                \"createdAt\": \"2023-11-18T10:04:47.006Z\",\n                \"updatedAt\": \"2023-11-18T10:04:47.840Z\",\n                \"publishedAt\": \"2023-11-18T10:04:47.838Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 2,\n            \"total\": 26\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Submit Nomination",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"Hello world!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://discord.com/api/webhooks/1173122910026735676/_2Dcg-KXftEzkKnRZH67ct3ed3bM407aa1YWjc9qeloE-MJhzjkoC2ebY5hHZ3mZ3aiK",
+					"protocol": "https",
+					"host": [
+						"discord",
+						"com"
+					],
+					"path": [
+						"api",
+						"webhooks",
+						"1173122910026735676",
+						"_2Dcg-KXftEzkKnRZH67ct3ed3bM407aa1YWjc9qeloE-MJhzjkoC2ebY5hHZ3mZ3aiK"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "271bb4b731d1c040f00c91dda915dc4ed37955bcbf2234c31cb85c67aedfc5bf8dfe52f1df6f12657cae89f4822e3185e7edebaff4b0016445d6304819ff3697580b1ab05e44bd5c2e874e13b0b7ba88b86d5e8d2d7b97fb0d582aeaca8de70251d88a6aaeb8167876b7985393a44cd7a211fa7e400ef61a66c5e65017c04312",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://strapi.atrioc.dev",
+			"type": "string"
+		}
+	]
+}
