@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'mobile': 'url("/static/images/mobile-background.svg")',
-        'desktop-background': 'url("/static/images/desktop-background.svg")',
+        'mobile': 'url("/static/images/mobile-background.png")',
+        'desktop': 'url("/static/images/desktop-background.png")',
       },
     },
   },
