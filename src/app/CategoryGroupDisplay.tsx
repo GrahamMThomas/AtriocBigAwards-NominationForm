@@ -18,7 +18,6 @@ export default function CategoryGroupDisplay({
           key={category.id}
           category={category}
           color={categoryGroup.attributes.color}
-          hasVoted={false}
         />
       ))}
     </div>

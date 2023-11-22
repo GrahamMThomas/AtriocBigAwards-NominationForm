@@ -1,22 +1,23 @@
 "use client";
 
-import { Input } from "postcss";
 import WidgetBase from "./components/WidgetBase";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Button from "./components/Button";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Blocks } from "react-loader-spinner";
+import onCategoryPick from "./OnCategoryPickEvent";
 
 type VoteWidgetProps = {
-  category: Category;
-  color: string;
+  categoryGroups: CategoryGroup[];
 };
 
-export default function VoteWidget({ category, color }: VoteWidgetProps) {
+export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
   const [nominee, setNominee] = useState("");
   const [chatterCase, setChatterCase] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitSuccessful, setSubmitSuccessful] = useState(false);
+  const [categoryId, setCategoryId] = useState("0");
   const [error, setError] = useState("");
   const session = useSession();
   const router = useRouter();
@@ -25,7 +26,26 @@ export default function VoteWidget({ category, color }: VoteWidgetProps) {
     router.push("/login");
   }
 
+  useEffect(() => {
+    const subscription = onCategoryPick.addListener(
+      "category-pick",
+      (newState) => {
+        console.log("VoteWidget changed Categories:", newState);
+        reset();
+        setCategoryId(newState);
+      }
+    );
+  }, []);
+
+  async function reset() {
+    setSubmitted(false);
+    setSubmitSuccessful(false);
+    setNominee("");
+    setChatterCase("");
+  }
+
   async function handleSubmit(
+    categoryId: string,
     nominee: string,
     chatterCase: string,
     twitchUsername: string
@@ -42,21 +62,33 @@ export default function VoteWidget({ category, color }: VoteWidgetProps) {
     if (response.ok) {
       localStorage.setItem(
         "votedOn",
-        localStorage.getItem("votedOn") + "," + category.id
+        localStorage.getItem("votedOn") + "," + categoryId
       );
+      setSubmitSuccessful(true);
     } else {
       setError("Something went wrong. Please try again later.");
     }
   }
 
+  // TODO: This is kinda gross. Figure out how to do this better.
+  let color =
+    categoryGroups.find((cg) =>
+      cg.attributes?.categories.data.find((c) => c.id === categoryId)
+    )?.attributes.color ?? "black";
+  let category = categoryGroups
+    .flatMap((cg) => cg.attributes?.categories.data.flatMap((c) => c))
+    .find((c) => c.id === categoryId);
+
   return (
     <WidgetBase color={color}>
-      <h1 className="text-3xl text-center">{category.attributes.title}</h1>
+      <h1 className="text-3xl text-center">
+        {category?.attributes.title ?? "Select a Category"}
+      </h1>
       <p className="text-center text-slate-300 text-sm">
-        {category.attributes.description}
+        {category?.attributes.description ?? ""}
       </p>
 
-      {!submitted && (
+      {(!submitted || !submitSuccessful) && (
         <Fragment>
           <input
             type="text"
@@ -78,7 +110,7 @@ export default function VoteWidget({ category, color }: VoteWidgetProps) {
       )}
 
       <Blocks
-        visible={submitted && error.length === 0}
+        visible={submitted && !submitSuccessful && error.length === 0}
         height="80"
         width="80"
         ariaLabel="blocks-loading"
@@ -88,13 +120,20 @@ export default function VoteWidget({ category, color }: VoteWidgetProps) {
 
       <span>{error}</span>
 
-      <Button
-        text="Submit"
-        onClick={() =>
-          handleSubmit(nominee, chatterCase, session.data!.user!.name!)
-        }
-        disabled={submitted && error.length === 0}
-      />
+      {category && !submitSuccessful && (
+        <Button
+          text="Submit"
+          onClick={() =>
+            handleSubmit(
+              category!.id,
+              nominee,
+              chatterCase,
+              session.data!.user!.name!
+            )
+          }
+          disabled={submitted && error.length === 0}
+        />
+      )}
     </WidgetBase>
   );
 }

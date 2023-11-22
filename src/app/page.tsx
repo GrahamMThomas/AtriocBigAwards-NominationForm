@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import NominationWidget from "./NominationWidget";
 import VoteWidget from "./VoteWidget";
 
@@ -28,11 +29,10 @@ async function fetchCategories(): Promise<GetCategoryGroupsResponse> {
 export default async function Page() {
   const categoryGroupResponse = await fetchCategories();
 
-  // return <NominationWidget categoryGroups={categoryGroupResponse.data} />;
   return (
-    <VoteWidget
-      category={categoryGroupResponse.data[0].attributes?.categories.data[0]}
-      color={categoryGroupResponse.data[0].attributes.color}
-    />
+    <Fragment>
+      <NominationWidget categoryGroups={categoryGroupResponse.data} />
+      <VoteWidget categoryGroups={categoryGroupResponse.data} />
+    </Fragment>
   );
 }

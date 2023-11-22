@@ -11,12 +11,14 @@ export default function NominationWidget({
   return (
     <WidgetBase>
       <h1 className="text-3xl">Nominations</h1>
-      {categoryGroups.map((categoryGroup) => (
-        <CategoryGroupDisplay
-          key={categoryGroup.id}
-          categoryGroup={categoryGroup}
-        />
-      ))}
+      <div className="max-h-[65vh] overflow-scroll mt-2">
+        {categoryGroups.map((categoryGroup) => (
+          <CategoryGroupDisplay
+            key={categoryGroup.id}
+            categoryGroup={categoryGroup}
+          />
+        ))}
+      </div>
     </WidgetBase>
   );
 }
