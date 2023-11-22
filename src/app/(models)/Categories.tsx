@@ -1,9 +1,31 @@
-type GetCategoriesResponse = {
-  data: Category[];
-  meta: GetCategoriesMetadata;
+type GetCategoryGroupsResponse = {
+  data: CategoryGroup[];
 };
 
-type GetCategoriesMetadata = {
+type CategoryGroup = {
+  id: string;
+  attributes: CategoryGroupAttributes;
+};
+
+type CategoryGroupAttributes = {
+  title: string;
+  color: string;
+  createdAt: Date;
+  updatedAt: Date;
+  publishedAt: Date;
+  categories: CategoriesData;
+};
+
+type CategoriesData = {
+  data: Category[];
+};
+
+type GetCategoriesResponse = {
+  data: Category[];
+  meta: ResponseMetadata;
+};
+
+type ResponseMetadata = {
   pagination: PaginationInfo;
 };
 
@@ -25,7 +47,7 @@ type CategoryAttributes = {
 
 type Category = {
   id: string;
-  attibutes: CategoryAttributes;
+  attributes: CategoryAttributes;
 };
 
 // export { GetCategoriesResponse, Category, CategoryAttributes, GetCategoriesMetadata, PaginationInfo}

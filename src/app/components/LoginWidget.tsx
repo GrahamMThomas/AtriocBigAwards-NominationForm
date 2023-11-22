@@ -6,6 +6,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Fragment } from "react";
 import { useRouter } from "next/navigation";
 import { Blocks } from "react-loader-spinner";
+import WidgetBase from "./WidgetBase";
 
 export default function LoginWidget() {
   const session = useSession();
@@ -27,7 +28,7 @@ export default function LoginWidget() {
   }
 
   return (
-    <div className="bg-navy mt-28 mx-16 p-8 rounded-lg flex flex-col items-center shadow-xl">
+    <WidgetBase>
       <div className="px-8 py-4 w-full h-full">
         <Image
           src={session?.data?.user?.image ?? "/static/images/chatter.png"}
@@ -50,6 +51,6 @@ export default function LoginWidget() {
       ) : (
         <Button text="Login" onClick={() => signIn()} />
       )}
-    </div>
+    </WidgetBase>
   );
 }

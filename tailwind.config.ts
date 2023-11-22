@@ -14,6 +14,10 @@ const config: Config = {
       },
       colors: {
         'navy': '#0E212E',
+        'biga-gray': '#394A55',
+      },
+      fontFamily: {
+        'roboto': 'Roboto, sans-serif',
       }
     },
   },
