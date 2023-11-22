@@ -8,10 +8,10 @@ interface ButtonProps {
 export default function Button({ text, onClick }: ButtonProps) {
   return (
     <button
-      className="bg-white rounded-lg p-4 m-2 min-w-full text-2xl font-bold"
+      className="bg-white text-black rounded-lg p-4 m-2 min-w-full text-2xl font-bold"
       onClick={() => onClick()}
     >
-      {text}
+      {text.toUpperCase()}
     </button>
   );
 }

@@ -39,9 +39,7 @@ export default function LoginWidget() {
         />
       </div>
 
-      <h1 className="text-white text-xl mb-8">
-        {session?.data?.user?.name ?? "chatter"}
-      </h1>
+      <h1 className="text-xl mb-8">{session?.data?.user?.name ?? "chatter"}</h1>
 
       {session.status === "authenticated" ? (
         <Fragment>

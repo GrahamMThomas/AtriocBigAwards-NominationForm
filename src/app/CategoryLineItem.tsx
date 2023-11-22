@@ -22,7 +22,7 @@ export default function CategoryLineItem({
         style={{ backgroundColor: `#${!hasVoted ? color : "999"}` }}
       ></div>
       <span
-        className="text-white font-roboto text-xs"
+        className="font-roboto text-xs"
         style={{
           textDecoration: `${!hasVoted ? "none" : "line-through"}`,
           color: `${!hasVoted ? "white" : "#999"}`,

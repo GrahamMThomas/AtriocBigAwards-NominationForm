@@ -9,7 +9,7 @@ export default function CategoryGroupDisplay({
 }: CategoryGroupDisplayProps) {
   return (
     <div className="bg-biga-gray w-full flex flex-col rounded-lg p-3 my-2">
-      <h3 className="text-white mb-2" key={categoryGroup.id}>
+      <h3 className="mb-2" key={categoryGroup.id}>
         {categoryGroup.attributes.title}
       </h3>
 

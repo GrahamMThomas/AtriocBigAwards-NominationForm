@@ -7,7 +7,7 @@ export default function CategoryGroupDisplay({
 }: CategoryGroupDisplayProps) {
   return (
     <div>
-      <h2 className="text-xl text-white">{name}</h2>
+      <h2 className="text-xl">{name}</h2>
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function NominationWidget({
 }: NominationWidgetProps) {
   return (
     <WidgetBase>
-      <h1 className="text-3xl text-white">Nominations</h1>
+      <h1 className="text-3xl">Nominations</h1>
       {categoryGroups.map((categoryGroup) => (
         <CategoryGroupDisplay
           key={categoryGroup.id}
