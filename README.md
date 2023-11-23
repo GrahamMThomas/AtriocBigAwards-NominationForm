@@ -76,8 +76,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 <!-- TODOs -->
 
 ## TODOs
-- Form parameter validation
-- Title name. favicon
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
