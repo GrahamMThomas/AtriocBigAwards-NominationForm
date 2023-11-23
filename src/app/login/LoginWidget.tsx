@@ -49,15 +49,20 @@ export default function LoginWidget() {
         <Fragment>
           <Button
             text="Logout"
+            className="w-full"
             onClick={() => {
               signOut();
               clearLocalStorage();
             }}
           />
-          <Button text="Home" onClick={() => router.push("/")} />
+          <Button
+            text="Home"
+            className="w-full"
+            onClick={() => router.push("/")}
+          />
         </Fragment>
       ) : (
-        <Button text="Login" onClick={() => signIn()} />
+        <Button text="Login" className="w-full" onClick={() => signIn()} />
       )}
     </WidgetBase>
   );

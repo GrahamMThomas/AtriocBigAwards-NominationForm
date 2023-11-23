@@ -137,18 +137,27 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
       <span>{error}</span>
 
       {category && !submitSuccessful && (
-        <Button
-          text="Submit"
-          onClick={() =>
-            handleSubmit(
-              category!.id,
-              nominee,
-              chatterCase,
-              session.data!.user!.name!
-            )
-          }
-          disabled={submitted && error.length === 0}
-        />
+        <div className="flex flex-row w-full">
+          <Button
+            text="Back"
+            className="bg-red-400 text-sm flex-grow-0"
+            onClick={() => categoryEventEmitter.emit("onCategoryPick", "0")}
+            disabled={submitted && error.length === 0}
+          />
+          <Button
+            text="Submit"
+            className="flex-grow "
+            onClick={() =>
+              handleSubmit(
+                category!.id,
+                nominee,
+                chatterCase,
+                session.data!.user!.name!
+              )
+            }
+            disabled={submitted && error.length === 0}
+          />
+        </div>
       )}
 
       {submitSuccessful && (
@@ -156,6 +165,7 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
           <span className="text-cente text-lg mt-4">Submitted!</span>
           <Button
             text="Uno Más"
+            className="w-full"
             onClick={() => {
               reset();
               unchooseCategory();
