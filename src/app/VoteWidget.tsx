@@ -6,7 +6,7 @@ import Button from "./components/Button";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Blocks } from "react-loader-spinner";
-import categoryEventEmitter from "./CategoryEventEmitter";
+import categoryEventEmitter from "./(global)/CategoryEventEmitter";
 
 type VoteWidgetProps = {
   categoryGroups: CategoryGroup[];
@@ -160,7 +160,6 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
               reset();
               unchooseCategory();
             }}
-            disabled={false}
           />
         </Fragment>
       )}

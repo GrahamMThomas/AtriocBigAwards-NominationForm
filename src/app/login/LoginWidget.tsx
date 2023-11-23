@@ -6,11 +6,15 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Fragment } from "react";
 import { useRouter } from "next/navigation";
 import { Blocks } from "react-loader-spinner";
-import WidgetBase from "./WidgetBase";
+import WidgetBase from "../components/WidgetBase";
 
 export default function LoginWidget() {
   const session = useSession();
   const router = useRouter();
+
+  function clearLocalStorage() {
+    localStorage.clear();
+  }
 
   if (session.status === "loading") {
     return (
@@ -43,7 +47,13 @@ export default function LoginWidget() {
 
       {session.status === "authenticated" ? (
         <Fragment>
-          <Button text="Logout" onClick={() => signOut()} />
+          <Button
+            text="Logout"
+            onClick={() => {
+              signOut();
+              clearLocalStorage();
+            }}
+          />
           <Button text="Home" onClick={() => router.push("/")} />
         </Fragment>
       ) : (

@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import CategoryGroupDisplay from "./CategoryGroupDisplay";
-import { useScreen } from "./ScreenContext";
+import { useScreen } from "./(global)/ScreenContext";
 import WidgetBase from "./components/WidgetBase";
-import categoryEventEmitter from "./CategoryEventEmitter";
+import categoryEventEmitter from "./(global)/CategoryEventEmitter";
 
 type NominationWidgetProps = {
   categoryGroups: CategoryGroup[];

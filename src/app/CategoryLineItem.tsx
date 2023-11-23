@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import categoryEventEmitter from "./CategoryEventEmitter";
+import categoryEventEmitter from "./(global)/CategoryEventEmitter";
 
 type CategoryLineItemProps = {
   category: Category;
