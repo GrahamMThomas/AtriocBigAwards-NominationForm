@@ -15,3 +15,8 @@ body, button, h1, h2, h3 {
     font-family: 'Rubik One';
     color: white
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}

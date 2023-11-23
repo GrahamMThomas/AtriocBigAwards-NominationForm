@@ -7,7 +7,7 @@ export default function WidgetBase({
 }) {
   return (
     <div
-      className="bg-navy border-t-[20px] mt-28 mx-10 px-8 pb-8 pt-4 rounded-2xl flex flex-col items-center shadow-xl"
+      className="bg-navy max-w-sm border-t-[20px] mt-28 mx-10 px-8 pb-8 pt-4 rounded-2xl flex flex-col items-center shadow-xl"
       style={{ borderColor: `#${color == null ? "0E212E" : color}` }}
     >
       {children}

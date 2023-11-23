@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { getServerSession } from "next-auth";
 import { SessionProvider } from "./components/SessionProvider";
+import { ScreenProvider } from "./ScreenContext";
+import Layout from "./CustomLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +21,13 @@ export default async function RootLayout({
   const session = await getServerSession();
 
   return (
-    <html lang="en" className="w-screen h-screen bg-cover bg-mobile">
+    <html lang="en" className="w-screen h-screen overflow-hidden">
       <body className={inter.className}>
-        <SessionProvider>{children}</SessionProvider>
+        <ScreenProvider>
+          <Layout>
+            <SessionProvider>{children}</SessionProvider>
+          </Layout>
+        </ScreenProvider>
       </body>
     </html>
   );

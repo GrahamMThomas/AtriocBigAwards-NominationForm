@@ -30,9 +30,9 @@ export default async function Page() {
   const categoryGroupResponse = await fetchCategories();
 
   return (
-    <Fragment>
+    <div className="flex flex-row items-center place-content-evenly flex-wrap">
       <NominationWidget categoryGroups={categoryGroupResponse.data} />
       <VoteWidget categoryGroups={categoryGroupResponse.data} />
-    </Fragment>
+    </div>
   );
 }
