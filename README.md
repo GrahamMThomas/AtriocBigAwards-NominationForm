@@ -29,7 +29,7 @@ This project offers a seamless nomination experience for Twitch users, encouragi
 
 #### Key Features:
 ##### 1. Twitch OAuth2 Authentication
-Users are required to log in to their Twitch accounts, providing an simple user experience
+Users are required to log in to their Twitch accounts, providing a simple user experience
 
 ##### 1. Dynamic Content
 The app dynamically fetches categories from a CMS, organized by name and color. Allows us to dynamically update categories without code changes.
