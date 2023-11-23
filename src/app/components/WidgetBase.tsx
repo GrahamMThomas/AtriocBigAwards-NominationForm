@@ -3,7 +3,7 @@ export default function WidgetBase({
   color,
 }: {
   children: React.ReactNode;
-  color?: string;
+  color?: string | null;
 }) {
   return (
     <div

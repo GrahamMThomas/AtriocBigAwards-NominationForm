@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import onCategoryPick from "./OnCategoryPickEvent";
+import categoryEventEmitter from "./CategoryEventEmitter";
 
 type CategoryLineItemProps = {
   category: Category;
@@ -15,18 +15,34 @@ export default function CategoryLineItem({
   const [isAlreadyVotedOn, setVotedOn] = useState(false);
 
   useEffect(() => {
-    let categoryIdsVotedOn = localStorage.getItem("votedOn")?.split(",");
-    setVotedOn(categoryIdsVotedOn?.includes(category.id.toString()) ?? false);
-    return () => {};
+    let checkIfAlreadyVotedOn = (newState: boolean) => {
+      if (newState == false) {
+        return;
+      }
+      let categoryIdsVotedOn = localStorage.getItem("votedOn")?.split(",");
+      setVotedOn(categoryIdsVotedOn?.includes(category.id.toString()) ?? false);
+    };
+
+    checkIfAlreadyVotedOn(true);
+    categoryEventEmitter.addListener("onCategorySubmit", checkIfAlreadyVotedOn);
+
+    return () => {
+      categoryEventEmitter.removeListener(
+        "onCategorySubmit",
+        checkIfAlreadyVotedOn
+      );
+    };
   }, [category.id]);
 
   function handleClick() {
-    onCategoryPick.emit("category-pick", category.id);
+    categoryEventEmitter.emit("onCategoryPick", category.id);
   }
 
   return (
     <div
-      className="bg-biga-gray hover:bg-[#756d7e] w-full flex flex-row rounded-lg p-1 justify-start items-center"
+      className={`bg-biga-gray ${
+        !isAlreadyVotedOn ? "hover:bg-[#756d7e] focus:bg-[#9b8eaa]" : ""
+      } w-full flex flex-row rounded-lg p-1 justify-start items-center`}
       onClick={() => (!isAlreadyVotedOn ? handleClick() : null)}
     >
       <div

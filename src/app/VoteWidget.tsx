@@ -6,7 +6,7 @@ import Button from "./components/Button";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Blocks } from "react-loader-spinner";
-import onCategoryPick from "./OnCategoryPickEvent";
+import categoryEventEmitter from "./CategoryEventEmitter";
 
 type VoteWidgetProps = {
   categoryGroups: CategoryGroup[];
@@ -27,21 +27,35 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
   }
 
   useEffect(() => {
-    const subscription = onCategoryPick.addListener(
-      "category-pick",
-      (newState) => {
-        console.log("VoteWidget changed Categories:", newState);
-        reset();
-        setCategoryId(newState);
+    var callback = (newState: string) => {
+      if (newState === "0") {
+        return;
       }
+      reset();
+      setCategoryId(newState);
+    };
+
+    const subscription = categoryEventEmitter.addListener(
+      "onCategoryPick",
+      callback
     );
+
+    return () => {
+      subscription.removeListener("onCategoryPick", callback);
+    };
   }, []);
 
-  async function reset() {
+  function reset() {
     setSubmitted(false);
     setSubmitSuccessful(false);
     setNominee("");
     setChatterCase("");
+    setCategoryId("0");
+    setError("");
+  }
+
+  function unchooseCategory() {
+    categoryEventEmitter.emit("onCategoryPick", "0");
   }
 
   async function handleSubmit(
@@ -65,8 +79,10 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
         localStorage.getItem("votedOn") + "," + categoryId
       );
       setSubmitSuccessful(true);
+      categoryEventEmitter.emit("onCategorySubmit", true);
     } else {
       setError("Something went wrong. Please try again later.");
+      categoryEventEmitter.emit("onCategorySubmit", false);
     }
   }
 
@@ -74,7 +90,7 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
   let color =
     categoryGroups.find((cg) =>
       cg.attributes?.categories.data.find((c) => c.id === categoryId)
-    )?.attributes.color ?? "black";
+    )?.attributes.color ?? null;
   let category = categoryGroups
     .flatMap((cg) => cg.attributes?.categories.data.flatMap((c) => c))
     .find((c) => c.id === categoryId);
@@ -133,6 +149,20 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
           }
           disabled={submitted && error.length === 0}
         />
+      )}
+
+      {submitSuccessful && (
+        <Fragment>
+          <span className="text-cente text-lg mt-4">Submitted!</span>
+          <Button
+            text="Uno Más"
+            onClick={() => {
+              reset();
+              unchooseCategory();
+            }}
+            disabled={false}
+          />
+        </Fragment>
       )}
     </WidgetBase>
   );
