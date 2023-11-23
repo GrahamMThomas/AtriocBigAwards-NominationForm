@@ -140,8 +140,11 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
         <div className="flex flex-row w-full">
           <Button
             text="Back"
-            className="bg-red-400 text-sm flex-grow-0"
-            onClick={() => categoryEventEmitter.emit("onCategoryPick", "0")}
+            className="!bg-red-400 text-sm flex-grow-0"
+            onClick={() => {
+              reset();
+              categoryEventEmitter.emit("onCategoryPick", "0");
+            }}
             disabled={submitted && error.length === 0}
           />
           <Button
@@ -155,7 +158,11 @@ export default function VoteWidget({ categoryGroups }: VoteWidgetProps) {
                 session.data!.user!.name!
               )
             }
-            disabled={submitted && error.length === 0}
+            disabled={
+              (submitted && error.length === 0) ||
+              chatterCase.length == 0 ||
+              nominee.length == 0
+            }
           />
         </div>
       )}
